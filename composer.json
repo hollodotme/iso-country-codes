@@ -1,0 +1,43 @@
+{
+    "name": "hollodotme/iso-country-codes",
+    "description": "A value object collection representing ICO-3166-1 country codes",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Holger Woltersdorf",
+            "email": "freelance@hollo.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "ext-dom": "*",
+        "tm/tooly-composer-script": "~1.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "hollodotme\\ISO\\CountryCodes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "hollodotme\\ISO\\CountryCodes\\Build\\": "build/",
+            "hollodotme\\ISO\\CountryCodes\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
+        "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
+    },
+    "extra": {
+        "tools": {
+            "phpunit": {
+                "url": "https://phar.phpunit.de/phpunit-9.phar",
+                "only-dev": true,
+                "replace": true
+            }
+        }
+    }
+}
