@@ -1,0 +1,27 @@
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - master
+      - development
+    pull_request:
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build images
+        run: docker-compose build --pull --parallel
+
+      - name: Pull composer
+        run: docker-compose pull composer
+
+      - name: Composer update
+        run: docker-compose run --rm composer
+
+      - name: Run PHPUnit
+        run: docker-compose run --rm php php -dauto_prepend_file=/repo/build/xdebug_filter.php /repo/vendor/bin/phpunit.phar -c /repo/build --testdox

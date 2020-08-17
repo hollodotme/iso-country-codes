@@ -1,0 +1,27 @@
+name: Static analysis
+
+on:
+  push:
+    branches:
+      - master
+      - development
+    pull_request:
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check for PHP parse errors
+        run: find ./src -type f -name '*.php' -print0 | xargs -0 -n1 -P4 php -l -n | (! grep -v "No syntax errors detected" )
+
+      - name: Pull necessary images
+        run: docker-compose pull phpstan composer
+
+      - name: Composer update
+        run: docker-compose run --rm composer
+
+      - name: Run PHPStan
+        run: docker-compose run --rm phpstan

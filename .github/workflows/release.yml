@@ -4,14 +4,9 @@ on:
   push:
     branches:
       - master
-      - development
 
     tags:
       - 'v*.*.*'
-
-  # Run tests for any PRs.
-  pull_request:
-
 jobs:
   release:
     runs-on: ubuntu-latest
