@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: ./.docker/php
+    restart: 'no'
+    volumes:
+    - ./:/repo
+    working_dir: /repo
+
+  composer:
+    image: library/composer:latest
+    restart: 'no'
+    volumes:
+      - ./:/repo
+      - ~/.composer:/tmp
+    working_dir: /repo
+    command: "update -o -v"
+
+  phpstan:
+    image: phpstan/phpstan
+    restart: "no"
+    volumes:
+      - ./:/repo
+    working_dir: /repo
+    command: "analyze"
