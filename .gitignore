@@ -1,2 +1,5 @@
 /.idea/
 !.gitkeep
+/vendor/
+/composer.lock
+/build/.phpunit.result.cache
