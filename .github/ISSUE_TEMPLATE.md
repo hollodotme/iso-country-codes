@@ -14,6 +14,6 @@
 
 - Package version:
 - Platform/OS:
-- Subsystem:
+- PHP version:
 
 ## Further comments

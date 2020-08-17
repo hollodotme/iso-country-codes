@@ -2,11 +2,11 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via pull requests on [GitHub](http://github.com/from-home-de/template-repo).
+We accept contributions via pull requests on [GitHub](http://github.com/hollodotme/iso-country-codes).
 
 ## Issues
 
-- Please report issues here on [GitHub](http://github.com/from-home-de/template-repo/issues)
+- Please report issues here on [GitHub](http://github.com/hollodotme/iso-country-codes/issues)
 
 ## Pull Requests
 
