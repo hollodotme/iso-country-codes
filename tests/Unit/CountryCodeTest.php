@@ -21,7 +21,7 @@ final class CountryCodeTest extends TestCase
 	 * @param string $expectedAlpha3Code
 	 * @param string $expectedNumericCode
 	 */
-	public function testFromEnglishShortNameCode(
+	public function testFromEnglishShortName(
 		string $englishShortName,
 		string $expectedShortNameEn,
 		string $expectedShortNameFr,
@@ -68,7 +68,7 @@ final class CountryCodeTest extends TestCase
 	 * @param string $expectedAlpha3Code
 	 * @param string $expectedNumericCode
 	 */
-	public function testFromFrenchShortNameCode(
+	public function testFromFrenchShortName(
 		string $frenchShortName,
 		string $expectedShortNameEn,
 		string $expectedShortNameFr,
